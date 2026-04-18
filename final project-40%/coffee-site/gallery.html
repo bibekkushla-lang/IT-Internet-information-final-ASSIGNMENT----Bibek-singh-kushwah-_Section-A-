@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew & Bean Coffee | Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="nav-container">
+      <div class="nav-logo">Brew <span>&</span> Bean</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="links.html">Links</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Our Gallery</h1>
+    <p>A visual journey through our coffee, space & community</p>
+  </div>
+
+  <!-- GALLERY SECTION -->
+  <section class="section">
+    <h2 class="section-title">Coffee &amp; Café Life</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">Click any photo to view full size</p>
+
+    <div class="gallery-grid">
+
+      <!-- Thumbnail 1 -->
+      <a href="#" class="gallery-thumb" onclick="openLightbox('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=90', 'Barista pouring latte art'); return false;">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=70" alt="Barista pouring beautiful latte art into a cup - thumbnail">
+        <div class="thumb-overlay"><span>🔍</span></div>
+      </a>
+
+      <!-- Thumbnail 2 -->
+      <a href="#" class="gallery-thumb" onclick="openLightbox('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=90', 'Coffee shop interior ambiance'); return false;">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=70" alt="Cosy coffee shop interior with warm lighting - thumbnail">
+        <div class="thumb-overlay"><span>🔍</span></div>
+      </a>
+
+      <!-- Thumbnail 3 -->
+      <a href="#" class="gallery-thumb" onclick="openLightbox('https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1200&q=90', 'Espresso extraction close-up'); return false;">
+        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&q=70" alt="Close up of espresso extraction from machine - thumbnail">
+        <div class="thumb-overlay"><span>🔍</span></div>
+      </a>
+
+      <!-- Thumbnail 4 -->
+      <a href="#" class="gallery-thumb" onclick="openLightbox('https://images.unsplash.com/photo-1610889556528-9a770e32642f?w=1200&q=90', 'Classic espresso in white cup'); return false;">
+        <img src="https://images.unsplash.com/photo-1610889556528-9a770e32642f?w=400&q=70" alt="Classic espresso served in a white ceramic cup - thumbnail">
+        <div class="thumb-overlay"><span>🔍</span></div>
+      </a>
+
+      <!-- Thumbnail 5 -->
+      <a href="#" class="gallery-thumb" onclick="openLightbox('https://images.unsplash.com/photo-1561047029-3000c68339ca?w=1200&q=90', 'Cappuccino with milk foam art'); return false;">
+        <img src="https://images.unsplash.com/photo-1561047029-3000c68339ca?w=400&q=70" alt="Cappuccino with intricate milk foam art on top - thumbnail">
+        <div class="thumb-overlay"><span>🔍</span></div>
+      </a>
+
+      <!-- Thumbnail 6 -->
+      <a href="#" class="gallery-thumb" onclick="openLightbox('https://images.unsplash.com/photo-1546173159-315724a31696?w=1200&q=90', 'Cold brew in tall glass'); return false;">
+        <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=400&q=70" alt="Cold brew coffee served in a tall glass with ice - thumbnail">
+        <div class="thumb-overlay"><span>🔍</span></div>
+      </a>
+
+      <!-- Thumbnail 7 -->
+      <a href="#" class="gallery-thumb" onclick="openLightbox('https://images.unsplash.com/photo-1568649929103-28ffbefaca1e?w=1200&q=90', 'Flat white coffee'); return false;">
+        <img src="https://images.unsplash.com/photo-1568649929103-28ffbefaca1e?w=400&q=70" alt="Perfectly crafted flat white coffee with heart art - thumbnail">
+        <div class="thumb-overlay"><span>🔍</span></div>
+      </a>
+
+      <!-- Thumbnail 8 -->
+      <a href="#" class="gallery-thumb" onclick="openLightbox('https://images.unsplash.com/photo-1579888944880-d98341245702?w=1200&q=90', 'Iced matcha latte'); return false;">
+        <img src="https://images.unsplash.com/photo-1579888944880-d98341245702?w=400&q=70" alt="Vibrant iced matcha latte in a tall glass - thumbnail">
+        <div class="thumb-overlay"><span>🔍</span></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
+    <img id="lightbox-img" src="" alt="Full size gallery image">
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo">Brew <span>&</span> Bean</span>
+        <p>Serving specialty coffee in the heart of Kathmandu since 2015. Come for the coffee, stay for the community.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="links.html">Links</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <ul>
+          <li>Thamel Marg, Thamel</li>
+          <li>Kathmandu, 44600</li>
+          <li>Nepal</li>
+          <li style="margin-top:10px;"><a href="mailto:hello@brewandbean.com">hello@brewandbean.com</a></li>
+          <li>+977-1-4700123</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <ul>
+          <li>Mon – Fri: 7am – 9pm</li>
+          <li>Saturday: 8am – 10pm</li>
+          <li>Sunday: 9am – 8pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Brew &amp; Bean Coffee, Thamel, Kathmandu, Nepal. All rights reserved.</p>
+      <nav class="footer-sec-nav" aria-label="Secondary navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  function openLightbox(src, altText) {
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    img.alt = altText;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close on background click
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew & Bean Coffee — Wireframes</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Lato',sans-serif; background:#f0ece6; padding:40px 20px; color:#2C1A0E; }
+    h1 { font-family:'Playfair Display',serif; text-align:center; margin-bottom:8px; font-size:2rem; color:#2C1A0E; }
+    .subtitle { text-align:center; color:#6B3A2A; margin-bottom:40px; letter-spacing:1px; font-size:0.9rem; text-transform:uppercase; }
+    .wireframe-section { margin-bottom:60px; }
+    .wf-title { font-size:1.1rem; font-weight:700; color:#2C1A0E; margin-bottom:6px; letter-spacing:0.5px; }
+    .wf-desc { font-size:0.85rem; color:#6B3A2A; margin-bottom:16px; }
+    .wf-box { background:#fff; border:2px solid #C4956A; border-radius:8px; overflow:hidden; max-width:900px; }
+
+    /* Wireframe element styles */
+    .wf-nav { background:#2C1A0E; color:#F5E6D3; display:flex; align-items:center; justify-content:space-between; padding:10px 20px; font-size:0.8rem; }
+    .wf-nav .logo { font-family:'Playfair Display',serif; font-size:1rem; color:#D4891A; }
+    .wf-nav .nav-links { display:flex; gap:10px; }
+    .wf-nav .nav-links span { background:rgba(255,255,255,0.1); padding:4px 10px; border-radius:3px; font-size:0.7rem; }
+    .wf-nav .nav-links span.active { background:#D4891A; color:#2C1A0E; }
+    .wf-hero { background:#C4956A; height:160px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; position:relative; overflow:hidden; }
+    .wf-hero::before { content:''; position:absolute; inset:0; background:rgba(44,26,14,0.4); }
+    .wf-hero-text { position:relative; text-align:center; color:#fff; }
+    .wf-hero-text h2 { font-family:'Playfair Display',serif; font-size:1.4rem; }
+    .wf-hero-text p { font-size:0.75rem; opacity:0.8; margin-top:4px; }
+    .wf-hero-btn { position:relative; background:#D4891A; color:#2C1A0E; padding:6px 18px; border-radius:20px; font-size:0.75rem; font-weight:700; margin-top:8px; display:inline-block; }
+    .slider-dot { display:flex; gap:5px; position:absolute; bottom:10px; left:50%; transform:translateX(-50%); }
+    .slider-dot span { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.5); }
+    .slider-dot span.active { background:#D4891A; }
+    .wf-arrow { position:absolute; top:50%; transform:translateY(-50%); color:#fff; font-size:1.2rem; opacity:0.7; padding:4px 8px; background:rgba(44,26,14,0.4); }
+    .wf-arrow.left { left:8px; }
+    .wf-arrow.right { right:8px; }
+
+    .wf-body { padding:20px; }
+    .wf-section-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#C4956A; margin-bottom:10px; text-align:center; }
+    .wf-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:20px; }
+    .wf-card { border:1.5px solid #C4956A; border-radius:6px; overflow:hidden; }
+    .wf-card-img { background:#e8d5c0; height:80px; display:flex; align-items:center; justify-content:center; font-size:0.7rem; color:#6B3A2A; }
+    .wf-card-body { padding:8px; background:#fff; }
+    .wf-card-body .wf-line { height:8px; background:#e8d5c0; border-radius:2px; margin-bottom:5px; }
+    .wf-card-body .wf-line.short { width:60%; }
+    .wf-card-body .wf-line.accent { background:#D4891A; width:40%; }
+
+    .wf-grid-2 { display:grid; grid-template-columns:1fr 1.5fr; gap:16px; margin-bottom:20px; }
+    .wf-info-block { border:1.5px solid #e8d5c0; border-radius:6px; padding:12px; background:#FAF3E8; }
+    .wf-info-block .wf-icon-row { display:flex; gap:8px; margin-bottom:8px; align-items:center; }
+    .wf-info-block .wf-icon { width:20px; height:20px; background:#C4956A; border-radius:50%; flex-shrink:0; }
+    .wf-info-block .wf-line-group { flex:1; }
+    .wf-form { border:1.5px solid #C4956A; border-radius:6px; padding:16px; background:#fff; }
+    .wf-form .wf-input { border:1.5px solid #e8d5c0; border-radius:4px; height:28px; background:#FAF3E8; margin-bottom:8px; width:100%; }
+    .wf-form .wf-textarea { border:1.5px solid #e8d5c0; border-radius:4px; height:60px; background:#FAF3E8; margin-bottom:10px; width:100%; }
+    .wf-form .wf-form-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px; }
+    .wf-submit { background:#D4891A; border-radius:20px; height:32px; width:100%; }
+    .wf-label { font-size:0.65rem; font-weight:700; text-transform:uppercase; color:#6B3A2A; margin-bottom:3px; letter-spacing:0.5px; }
+
+    .wf-gallery-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:20px; }
+    .wf-thumb { background:#e8d5c0; aspect-ratio:1; border-radius:6px; border:1.5px solid #C4956A; display:flex; align-items:center; justify-content:center; font-size:0.7rem; color:#6B3A2A; cursor:pointer; position:relative; overflow:hidden; }
+    .wf-thumb::after { content:'🔍'; position:absolute; inset:0; background:rgba(44,26,14,0.5); display:flex; align-items:center; justify-content:center; font-size:1rem; opacity:0; transition:opacity 0.2s; }
+    .wf-thumb:hover::after { opacity:1; }
+
+    .wf-table { width:100%; border-collapse:collapse; font-size:0.78rem; margin-bottom:20px; }
+    .wf-table thead { background:#2C1A0E; color:#F5E6D3; }
+    .wf-table thead th { padding:8px 12px; text-align:left; font-size:0.7rem; text-transform:uppercase; letter-spacing:1px; }
+    .wf-table tbody td { padding:8px 12px; border-bottom:1px solid #e8d5c0; color:#6B3A2A; }
+    .wf-table .cat { background:#3D2314; color:#F5E6D3; font-size:0.65rem; font-weight:700; text-transform:uppercase; text-align:center; letter-spacing:1px; }
+    .wf-table tbody tr:hover { background:#FAF3E8; }
+
+    .wf-footer { background:#2C1A0E; color:#C4956A; padding:14px 20px; }
+    .wf-footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:16px; margin-bottom:10px; }
+    .wf-footer-col .wf-col-title { font-size:0.65rem; text-transform:uppercase; letter-spacing:1.5px; color:#D4891A; margin-bottom:6px; }
+    .wf-footer-col .wf-line { height:5px; background:rgba(196,149,106,0.3); border-radius:2px; margin-bottom:4px; }
+    .wf-footer-col .wf-line.short { width:70%; }
+    .wf-footer-bottom { border-top:1px solid rgba(196,149,106,0.2); padding-top:8px; font-size:0.65rem; display:flex; justify-content:space-between; }
+
+    .wf-blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:20px; }
+    .wf-blog-card { border:1.5px solid #C4956A; border-radius:6px; overflow:hidden; }
+    .wf-blog-img { background:#e8d5c0; height:70px; }
+    .wf-blog-body { padding:10px; }
+    .wf-tag { background:#D4891A; color:#2C1A0E; font-size:0.6rem; font-weight:700; padding:2px 8px; border-radius:10px; display:inline-block; margin-bottom:6px; }
+
+    .wf-about-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
+    .wf-about-img { background:#e8d5c0; border-radius:8px; height:160px; border:1.5px solid #C4956A; }
+
+    .wf-annotation { font-size:0.65rem; color:#D4891A; font-weight:700; border-left:2px solid #D4891A; padding-left:6px; margin-bottom:6px; }
+  </style>
+</head>
+<body>
+
+<h1>Brew &amp; Bean — Wireframes</h1>
+<p class="subtitle">Website Design Blueprints &nbsp;|&nbsp; Internet Technologies Assessment &nbsp;|&nbsp; 2026</p>
+
+<!-- WIREFRAME 1: Homepage -->
+<div class="wireframe-section">
+  <div class="wf-title">Wireframe 1 — index.html (Homepage)</div>
+  <div class="wf-desc">Features: Image slider banner with arrows and dots, featured drink cards, footer navigation</div>
+  <div class="wf-box">
+    <div class="wf-nav">
+      <span class="logo">Brew &amp; Bean</span>
+      <div class="nav-links">
+        <span class="active">Home</span><span>Menu</span><span>About</span><span>Blog</span><span>Gallery</span><span>Links</span><span>Sitemap</span><span>Contact</span>
+      </div>
+    </div>
+    <div class="wf-hero">
+      <div class="wf-hero-text">
+        <h2>Where Every Cup Tells a Story</h2>
+        <p>Handcrafted with love, served with passion</p>
+        <span class="wf-hero-btn">Explore Our Menu</span>
+      </div>
+      <div class="slider-dot"><span class="active"></span><span></span><span></span></div>
+      <span class="wf-arrow left">&#10094;</span>
+      <span class="wf-arrow right">&#10095;</span>
+    </div>
+    <div class="wf-body">
+      <div class="wf-annotation">Image slider auto-plays every 5 seconds — JS controlled</div>
+      <div class="wf-section-label">Signature Drinks Section</div>
+      <div class="wf-cards">
+        <div class="wf-card"><div class="wf-card-img">[ Coffee Image ]</div><div class="wf-card-body"><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line accent"></div></div></div>
+        <div class="wf-card"><div class="wf-card-img">[ Coffee Image ]</div><div class="wf-card-body"><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line accent"></div></div></div>
+        <div class="wf-card"><div class="wf-card-img">[ Coffee Image ]</div><div class="wf-card-body"><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line accent"></div></div></div>
+      </div>
+      <div class="wf-section-label">Why Choose Us — 3 icon columns</div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:16px;">
+        <div style="text-align:center; padding:12px; border:1.5px solid #e8d5c0; border-radius:6px;"><div style="width:30px;height:30px;background:#C4956A;border-radius:50%;margin:0 auto 6px;"></div><div class="wf-line" style="margin:0 auto 4px; width:70%;"></div><div class="wf-line short" style="margin:0 auto;"></div></div>
+        <div style="text-align:center; padding:12px; border:1.5px solid #e8d5c0; border-radius:6px;"><div style="width:30px;height:30px;background:#C4956A;border-radius:50%;margin:0 auto 6px;"></div><div class="wf-line" style="margin:0 auto 4px; width:70%;"></div><div class="wf-line short" style="margin:0 auto;"></div></div>
+        <div style="text-align:center; padding:12px; border:1.5px solid #e8d5c0; border-radius:6px;"><div style="width:30px;height:30px;background:#C4956A;border-radius:50%;margin:0 auto 6px;"></div><div class="wf-line" style="margin:0 auto 4px; width:70%;"></div><div class="wf-line short" style="margin:0 auto;"></div></div>
+      </div>
+    </div>
+    <div class="wf-footer">
+      <div class="wf-footer-grid">
+        <div class="wf-footer-col"><div class="wf-col-title">Brand</div><div class="wf-line"></div><div class="wf-line short"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Pages</div><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Address</div><div class="wf-line"></div><div class="wf-line short"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Hours</div><div class="wf-line"></div><div class="wf-line short"></div></div>
+      </div>
+      <div class="wf-footer-bottom"><span>&copy; 2026 Brew &amp; Bean Coffee, Thamel, Kathmandu</span><span>Home | Menu | About | Gallery | Contact</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- WIREFRAME 2: Gallery -->
+<div class="wireframe-section">
+  <div class="wf-title">Wireframe 2 — gallery.html (Photo Gallery)</div>
+  <div class="wf-desc">Features: 4x2 grid of thumbnails, hover overlay, lightbox popup to full-size image</div>
+  <div class="wf-box">
+    <div class="wf-nav">
+      <span class="logo">Brew &amp; Bean</span>
+      <div class="nav-links"><span>Home</span><span>Menu</span><span>About</span><span>Blog</span><span class="active">Gallery</span><span>Links</span><span>Sitemap</span><span>Contact</span></div>
+    </div>
+    <div style="background:#2C1A0E; padding:30px; text-align:center; color:#F5E6D3;">
+      <div style="font-family:'Playfair Display',serif; font-size:1.4rem;">Our Gallery</div>
+      <div style="font-size:0.75rem; opacity:0.6; margin-top:4px;">A visual journey through our coffee, space &amp; community</div>
+    </div>
+    <div class="wf-body">
+      <div class="wf-annotation">Thumbnails link to larger images — JS lightbox opens on click</div>
+      <div class="wf-section-label">Photo Grid (4 columns × 2 rows = 8 photos)</div>
+      <div class="wf-gallery-grid">
+        <div class="wf-thumb">Photo 1</div>
+        <div class="wf-thumb">Photo 2</div>
+        <div class="wf-thumb">Photo 3</div>
+        <div class="wf-thumb">Photo 4</div>
+        <div class="wf-thumb">Photo 5</div>
+        <div class="wf-thumb">Photo 6</div>
+        <div class="wf-thumb">Photo 7</div>
+        <div class="wf-thumb">Photo 8</div>
+      </div>
+      <div class="wf-annotation">Lightbox: dark overlay + large image + X close button</div>
+      <div style="background:#1a1a1a; border-radius:8px; padding:16px; display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:16px;">
+        <div style="background:#3a3a3a; width:200px; height:120px; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#aaa; font-size:0.75rem;">[ Full Size Image ]</div>
+        <div style="color:#fff; font-size:1.5rem; cursor:pointer;">✕</div>
+      </div>
+    </div>
+    <div class="wf-footer">
+      <div class="wf-footer-grid">
+        <div class="wf-footer-col"><div class="wf-col-title">Brand</div><div class="wf-line"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Pages</div><div class="wf-line"></div><div class="wf-line short"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Address</div><div class="wf-line"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Hours</div><div class="wf-line"></div></div>
+      </div>
+      <div class="wf-footer-bottom"><span>&copy; 2026 Brew &amp; Bean Coffee, Thamel, Kathmandu</span><span>Home | Menu | About | Gallery | Contact</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- WIREFRAME 3: Contact -->
+<div class="wireframe-section">
+  <div class="wf-title">Wireframe 3 — contact.html (Contact Form)</div>
+  <div class="wf-desc">Features: 2-column layout, JS-validated form (name, email, phone, subject, message), success message</div>
+  <div class="wf-box">
+    <div class="wf-nav">
+      <span class="logo">Brew &amp; Bean</span>
+      <div class="nav-links"><span>Home</span><span>Menu</span><span>About</span><span>Blog</span><span>Gallery</span><span>Links</span><span>Sitemap</span><span class="active">Contact</span></div>
+    </div>
+    <div style="background:#2C1A0E; padding:30px; text-align:center; color:#F5E6D3;">
+      <div style="font-family:'Playfair Display',serif; font-size:1.4rem;">Contact Us</div>
+      <div style="font-size:0.75rem; opacity:0.6; margin-top:4px;">We'd love to hear from you</div>
+    </div>
+    <div class="wf-body">
+      <div class="wf-annotation">Left: contact info &nbsp;|&nbsp; Right: validated form — JS checks all required fields</div>
+      <div class="wf-grid-2">
+        <div class="wf-info-block">
+          <div class="wf-label">Contact Info</div>
+          <div class="wf-icon-row"><div class="wf-icon"></div><div class="wf-line-group"><div class="wf-line"></div><div class="wf-line short" style="height:5px;background:#e8d5c0;border-radius:2px;margin-top:4px;"></div></div></div>
+          <div class="wf-icon-row"><div class="wf-icon"></div><div class="wf-line-group"><div class="wf-line"></div></div></div>
+          <div class="wf-icon-row"><div class="wf-icon"></div><div class="wf-line-group"><div class="wf-line" style="background:#D4891A;"></div></div></div>
+          <div class="wf-icon-row"><div class="wf-icon"></div><div class="wf-line-group"><div class="wf-line"></div><div class="wf-line short" style="height:5px;background:#e8d5c0;border-radius:2px;margin-top:4px;"></div></div></div>
+        </div>
+        <div class="wf-form">
+          <div class="wf-label">Send Us a Message</div>
+          <div class="wf-form-row"><div><div class="wf-label">First Name *</div><div class="wf-input"></div></div><div><div class="wf-label">Last Name *</div><div class="wf-input"></div></div></div>
+          <div class="wf-label">Email *</div><div class="wf-input"></div>
+          <div class="wf-label">Phone</div><div class="wf-input"></div>
+          <div class="wf-label">Subject *</div><div class="wf-input" style="background:#FAF3E8;"></div>
+          <div class="wf-label">Message * (min 20 chars)</div><div class="wf-textarea"></div>
+          <div class="wf-submit"></div>
+          <div style="background:#d4edda; border-radius:4px; height:28px; margin-top:8px; border:1px solid #c3e6cb;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="wf-footer">
+      <div class="wf-footer-grid">
+        <div class="wf-footer-col"><div class="wf-col-title">Brand</div><div class="wf-line"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Pages</div><div class="wf-line"></div><div class="wf-line short"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Address</div><div class="wf-line"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Hours</div><div class="wf-line"></div></div>
+      </div>
+      <div class="wf-footer-bottom"><span>&copy; 2026 Brew &amp; Bean Coffee, Thamel, Kathmandu</span><span>Home | Menu | About | Gallery | Contact</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- WIREFRAME 4: Menu -->
+<div class="wireframe-section">
+  <div class="wf-title">Wireframe 4 — menu.html (Menu &amp; Price Table)</div>
+  <div class="wf-desc">Features: Featured drink cards, full price table with colspan / rowspan / nested table</div>
+  <div class="wf-box">
+    <div class="wf-nav">
+      <span class="logo">Brew &amp; Bean</span>
+      <div class="nav-links"><span>Home</span><span class="active">Menu</span><span>About</span><span>Blog</span><span>Gallery</span><span>Links</span><span>Sitemap</span><span>Contact</span></div>
+    </div>
+    <div style="background:#2C1A0E; padding:30px; text-align:center; color:#F5E6D3;">
+      <div style="font-family:'Playfair Display',serif; font-size:1.4rem;">Our Menu</div>
+      <div style="font-size:0.75rem; opacity:0.6; margin-top:4px;">Handcrafted drinks &amp; artisan bakes</div>
+    </div>
+    <div class="wf-body">
+      <div class="wf-section-label">Featured Drink Cards</div>
+      <div class="wf-cards">
+        <div class="wf-card"><div class="wf-card-img">[ Coffee Image ]</div><div class="wf-card-body"><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line accent"></div></div></div>
+        <div class="wf-card"><div class="wf-card-img">[ Coffee Image ]</div><div class="wf-card-body"><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line accent"></div></div></div>
+        <div class="wf-card"><div class="wf-card-img">[ Coffee Image ]</div><div class="wf-card-body"><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line accent"></div></div></div>
+      </div>
+      <div class="wf-annotation">Table uses: colspan (food items spanning 3 price cols) &amp; rowspan (category spanning rows) &amp; nested table (combos)</div>
+      <div class="wf-section-label">Full Price Table</div>
+      <table class="wf-table">
+        <thead><tr><th colspan="2">Item</th><th>Small</th><th>Regular</th><th>Large</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td class="cat" rowspan="3">☕ Hot Coffee</td><td>Espresso</td><td>120</td><td>150</td><td>—</td><td>Single/double</td></tr>
+          <tr><td>Cappuccino</td><td>180</td><td>220</td><td>250</td><td>Equal foam</td></tr>
+          <tr><td>Latte</td><td>190</td><td>230</td><td>270</td><td>Oat +30</td></tr>
+          <tr><td class="cat" rowspan="2">🧊 Cold</td><td>Cold Brew</td><td>220</td><td>260</td><td>300</td><td>18h steep</td></tr>
+          <tr><td>Iced Latte</td><td>200</td><td>240</td><td>280</td><td>Over ice</td></tr>
+          <tr><td class="cat" rowspan="2">🥐 Food</td><td>Croissant</td><td colspan="3" style="text-align:center;">180</td><td>Daily baked</td></tr>
+          <tr><td>Avocado Toast</td><td colspan="3" style="text-align:center;">320</td><td>Sourdough</td></tr>
+          <tr><td class="cat">🎁 Combos</td><td colspan="5" style="text-align:center; font-size:0.7rem; padding:4px;">[ Nested table: combo name / includes / price ]</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wf-footer">
+      <div class="wf-footer-grid">
+        <div class="wf-footer-col"><div class="wf-col-title">Brand</div><div class="wf-line"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Pages</div><div class="wf-line"></div><div class="wf-line short"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Address</div><div class="wf-line"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Hours</div><div class="wf-line"></div></div>
+      </div>
+      <div class="wf-footer-bottom"><span>&copy; 2026 Brew &amp; Bean Coffee, Thamel, Kathmandu</span><span>Home | Menu | About | Gallery | Contact</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- WIREFRAME 5: About -->
+<div class="wireframe-section">
+  <div class="wf-title">Wireframe 5 — about.html (About Us)</div>
+  <div class="wf-desc">Features: 2-column story layout (image + text), values grid, team cards</div>
+  <div class="wf-box">
+    <div class="wf-nav">
+      <span class="logo">Brew &amp; Bean</span>
+      <div class="nav-links"><span>Home</span><span>Menu</span><span class="active">About</span><span>Blog</span><span>Gallery</span><span>Links</span><span>Sitemap</span><span>Contact</span></div>
+    </div>
+    <div style="background:#2C1A0E; padding:30px; text-align:center; color:#F5E6D3;">
+      <div style="font-family:'Playfair Display',serif; font-size:1.4rem;">About Brew &amp; Bean</div>
+      <div style="font-size:0.75rem; opacity:0.6; margin-top:4px;">Our story, our passion, our people</div>
+    </div>
+    <div class="wf-body">
+      <div class="wf-section-label">Our Story — 2-column layout</div>
+      <div class="wf-about-grid">
+        <div class="wf-about-img" style="display:flex;align-items:center;justify-content:center;color:#6B3A2A;font-size:0.75rem;">[ Café Interior Photo ]</div>
+        <div>
+          <div class="wf-label" style="margin-bottom:8px;">Our Story</div>
+          <div class="wf-line" style="height:8px;background:#e8d5c0;border-radius:2px;margin-bottom:6px;"></div>
+          <div class="wf-line" style="height:8px;background:#e8d5c0;border-radius:2px;margin-bottom:6px; width:90%;"></div>
+          <div class="wf-line" style="height:8px;background:#e8d5c0;border-radius:2px;margin-bottom:6px;"></div>
+          <div class="wf-line" style="height:8px;background:#e8d5c0;border-radius:2px;margin-bottom:6px; width:75%;"></div>
+          <div style="background:#D4891A; border-radius:20px; height:28px; width:130px; margin-top:12px;"></div>
+        </div>
+      </div>
+      <div class="wf-section-label">Values — 3 cards</div>
+      <div class="wf-cards">
+        <div class="wf-card"><div class="wf-card-img" style="height:50px;">🌍</div><div class="wf-card-body"><div class="wf-line"></div><div class="wf-line short"></div></div></div>
+        <div class="wf-card"><div class="wf-card-img" style="height:50px;">🎓</div><div class="wf-card-body"><div class="wf-line"></div><div class="wf-line short"></div></div></div>
+        <div class="wf-card"><div class="wf-card-img" style="height:50px;">♻️</div><div class="wf-card-body"><div class="wf-line"></div><div class="wf-line short"></div></div></div>
+      </div>
+      <div class="wf-section-label">Team — 3 member cards</div>
+      <div class="wf-cards">
+        <div class="wf-card"><div class="wf-card-img">[ Portrait ]</div><div class="wf-card-body"><div class="wf-line"></div><div class="wf-line short" style="background:#D4891A;"></div><div class="wf-line short"></div></div></div>
+        <div class="wf-card"><div class="wf-card-img">[ Portrait ]</div><div class="wf-card-body"><div class="wf-line"></div><div class="wf-line short" style="background:#D4891A;"></div><div class="wf-line short"></div></div></div>
+        <div class="wf-card"><div class="wf-card-img">[ Portrait ]</div><div class="wf-card-body"><div class="wf-line"></div><div class="wf-line short" style="background:#D4891A;"></div><div class="wf-line short"></div></div></div>
+      </div>
+    </div>
+    <div class="wf-footer">
+      <div class="wf-footer-grid">
+        <div class="wf-footer-col"><div class="wf-col-title">Brand</div><div class="wf-line"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Pages</div><div class="wf-line"></div><div class="wf-line short"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Address</div><div class="wf-line"></div></div>
+        <div class="wf-footer-col"><div class="wf-col-title">Hours</div><div class="wf-line"></div></div>
+      </div>
+      <div class="wf-footer-bottom"><span>&copy; 2026 Brew &amp; Bean Coffee, Thamel, Kathmandu</span><span>Home | Menu | About | Gallery | Contact</span></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

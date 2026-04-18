@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew & Bean Coffee | Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="nav-container">
+      <div class="nav-logo">Brew <span>&</span> Bean</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="links.html">Links</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you</p>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section class="section">
+    <div class="contact-layout">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <p style="color:var(--text-mid); margin-bottom:30px;">Whether you have a question about our menu, want to book an event, or just want to say hello — we're always happy to chat.</p>
+
+        <div class="contact-detail">
+          <span class="contact-icon">📍</span>
+          <div>
+            <strong>Address</strong>
+            <p>Thamel Marg, Thamel<br>Kathmandu, 44600, Nepal</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <span class="contact-icon">📞</span>
+          <div>
+            <strong>Phone</strong>
+            <p>+977-1-4700123</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <span class="contact-icon">✉️</span>
+          <div>
+            <strong>Email</strong>
+            <p><a href="mailto:hello@brewandbean.com">hello@brewandbean.com</a></p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <span class="contact-icon">🕐</span>
+          <div>
+            <strong>Opening Hours</strong>
+            <p>Mon–Fri: 7am – 9pm<br>Saturday: 8am – 10pm<br>Sunday: 9am – 8pm</p>
+          </div>
+        </div>
+
+        <div style="margin-top:30px; background:var(--cream); padding:20px; border-radius:12px;">
+          <p style="font-size:0.9rem; color:var(--text-mid);">
+            <strong style="color:var(--espresso);">For event bookings</strong>, please email us directly at
+            <a href="mailto:events@brewandbean.com">events@brewandbean.com</a>
+            with at least 72 hours notice.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="contact-form">
+        <h3 style="font-family:'Playfair Display',serif; color:var(--espresso); margin-bottom:25px; font-size:1.5rem;">Send Us a Message</h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" placeholder="e.g. Aarav">
+            <span class="error-msg" id="firstNameError">Please enter your first name.</span>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" placeholder="e.g. Sharma">
+            <span class="error-msg" id="lastNameError">Please enter your last name.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" placeholder="you@example.com">
+          <span class="error-msg" id="emailError">Please enter a valid email address.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="+977-98XXXXXXXX">
+          <span class="error-msg" id="phoneError">Please enter a valid phone number (digits only, 7–15 chars).</span>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject *</label>
+          <select id="subject">
+            <option value="">-- Please select --</option>
+            <option value="general">General Enquiry</option>
+            <option value="menu">Menu Question</option>
+            <option value="event">Event Booking</option>
+            <option value="feedback">Feedback</option>
+            <option value="wholesale">Wholesale Beans</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="error-msg" id="subjectError">Please select a subject.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" placeholder="Write your message here... (minimum 20 characters)"></textarea>
+          <span class="error-msg" id="messageError">Please enter a message (at least 20 characters).</span>
+        </div>
+
+        <div class="form-group" style="display:flex; align-items:center; gap:10px;">
+          <input type="checkbox" id="newsletter" style="width:auto; accent-color:var(--accent);">
+          <label for="newsletter" style="text-transform:none; font-size:0.9rem; font-weight:400; letter-spacing:0; cursor:pointer;">
+            Subscribe me to the Brew &amp; Bean newsletter
+          </label>
+        </div>
+
+        <button type="button" class="btn" onclick="validateForm()" style="width:100%; padding:16px; font-size:1rem;">
+          Send Message ✉
+        </button>
+
+        <div class="success-msg" id="successMsg">
+          ✅ Thank you! Your message has been sent. We'll get back to you within 24 hours.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo">Brew <span>&</span> Bean</span>
+        <p>Serving specialty coffee in the heart of Kathmandu since 2015. Come for the coffee, stay for the community.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="links.html">Links</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <ul>
+          <li>Thamel Marg, Thamel</li>
+          <li>Kathmandu, 44600</li>
+          <li>Nepal</li>
+          <li style="margin-top:10px;"><a href="mailto:hello@brewandbean.com">hello@brewandbean.com</a></li>
+          <li>+977-1-4700123</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <ul>
+          <li>Mon – Fri: 7am – 9pm</li>
+          <li>Saturday: 8am – 10pm</li>
+          <li>Sunday: 9am – 8pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Brew &amp; Bean Coffee, Thamel, Kathmandu, Nepal. All rights reserved.</p>
+      <nav class="footer-sec-nav" aria-label="Secondary navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</div>
+
+<!-- JAVASCRIPT FORM VALIDATION -->
+<script>
+  function validateForm() {
+    let valid = true;
+
+    // Helper functions
+    function showError(id, errorId) {
+      document.getElementById(id).classList.add('input-error');
+      document.getElementById(errorId).classList.add('show');
+    }
+
+    function clearError(id, errorId) {
+      document.getElementById(id).classList.remove('input-error');
+      document.getElementById(errorId).classList.remove('show');
+    }
+
+    // First Name
+    const firstName = document.getElementById('firstName').value.trim();
+    if (firstName.length < 2) {
+      showError('firstName', 'firstNameError');
+      valid = false;
+    } else {
+      clearError('firstName', 'firstNameError');
+    }
+
+    // Last Name
+    const lastName = document.getElementById('lastName').value.trim();
+    if (lastName.length < 2) {
+      showError('lastName', 'lastNameError');
+      valid = false;
+    } else {
+      clearError('lastName', 'lastNameError');
+    }
+
+    // Email — must contain @ and a dot after @
+    const email = document.getElementById('email').value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showError('email', 'emailError');
+      valid = false;
+    } else {
+      clearError('email', 'emailError');
+    }
+
+    // Phone — optional but must be valid if filled
+    const phone = document.getElementById('phone').value.trim();
+    if (phone !== '') {
+      const phoneRegex = /^[0-9+\-\s]{7,15}$/;
+      if (!phoneRegex.test(phone)) {
+        showError('phone', 'phoneError');
+        valid = false;
+      } else {
+        clearError('phone', 'phoneError');
+      }
+    } else {
+      clearError('phone', 'phoneError');
+    }
+
+    // Subject
+    const subject = document.getElementById('subject').value;
+    if (subject === '') {
+      showError('subject', 'subjectError');
+      valid = false;
+    } else {
+      clearError('subject', 'subjectError');
+    }
+
+    // Message — minimum 20 characters
+    const message = document.getElementById('message').value.trim();
+    if (message.length < 20) {
+      showError('message', 'messageError');
+      valid = false;
+    } else {
+      clearError('message', 'messageError');
+    }
+
+    // If all valid — show success
+    if (valid) {
+      document.getElementById('successMsg').classList.add('show');
+      // Reset fields
+      ['firstName', 'lastName', 'email', 'phone', 'message'].forEach(id => {
+        document.getElementById(id).value = '';
+      });
+      document.getElementById('subject').value = '';
+      document.getElementById('newsletter').checked = false;
+      // Scroll to success message
+      document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  // Real-time validation on blur
+  document.getElementById('email').addEventListener('blur', function() {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (this.value && !emailRegex.test(this.value)) {
+      this.classList.add('input-error');
+      document.getElementById('emailError').classList.add('show');
+    }
+  });
+</script>
+</body>
+</html>

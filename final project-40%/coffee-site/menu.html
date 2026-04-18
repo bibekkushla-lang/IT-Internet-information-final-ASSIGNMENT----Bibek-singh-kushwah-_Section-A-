@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew & Bean Coffee | Menu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="nav-container">
+      <div class="nav-logo">Brew <span>&</span> Bean</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html" class="active">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="links.html">Links</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Our Menu</h1>
+    <p>Handcrafted drinks & artisan bakes</p>
+  </div>
+
+  <!-- FEATURED DRINKS -->
+  <section class="section">
+    <h2 class="section-title">Signature Drinks</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">All espresso drinks available with oat, almond, or soy milk</p>
+    <div class="cards-grid">
+      <div class="card">
+        <img class="card-img" src="https://images.unsplash.com/photo-1568649929103-28ffbefaca1e?w=600&q=80" alt="Flat white coffee with heart latte art">
+        <div class="card-body">
+          <h3>Flat White</h3>
+          <p>Double ristretto with velvety steamed milk. The Antipodean classic.</p>
+          <p class="card-price">NPR 200</p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="https://images.unsplash.com/photo-1579888944880-d98341245702?w=600&q=80" alt="Iced matcha latte in tall glass">
+        <div class="card-body">
+          <h3>Iced Matcha Latte</h3>
+          <p>Ceremonial grade matcha, cold milk, and a hint of vanilla syrup.</p>
+          <p class="card-price">NPR 260</p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="https://images.unsplash.com/photo-1587080413959-06b859fb107d?w=600&q=80" alt="Caramel macchiato with caramel drizzle">
+        <div class="card-body">
+          <h3>Caramel Macchiato</h3>
+          <p>Vanilla syrup, foamy milk, espresso, and salted caramel drizzle.</p>
+          <p class="card-price">NPR 290</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL MENU TABLE (with colspan, rowspan, nested) -->
+  <section class="section section-alt">
+    <h2 class="section-title">Full Price Menu</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">Prices in Nepalese Rupees (NPR)</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">Drink / Item</th>
+            <th>Small</th>
+            <th>Regular</th>
+            <th>Large</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- HOT COFFEE CATEGORY -->
+          <tr>
+            <td class="category-cell" rowspan="5">☕ Hot Coffee</td>
+            <td><strong>Espresso</strong></td>
+            <td>NPR 120</td>
+            <td>NPR 150</td>
+            <td>N/A</td>
+            <td>Single or double shot</td>
+          </tr>
+          <tr>
+            <td><strong>Americano</strong></td>
+            <td>NPR 140</td>
+            <td>NPR 170</td>
+            <td>NPR 200</td>
+            <td>Espresso + hot water</td>
+          </tr>
+          <tr>
+            <td><strong>Cappuccino</strong></td>
+            <td>NPR 180</td>
+            <td>NPR 220</td>
+            <td>NPR 250</td>
+            <td>Equal foam, milk & espresso</td>
+          </tr>
+          <tr>
+            <td><strong>Latte</strong></td>
+            <td>NPR 190</td>
+            <td>NPR 230</td>
+            <td>NPR 270</td>
+            <td>Oat milk +NPR 30</td>
+          </tr>
+          <tr>
+            <td><strong>Flat White</strong></td>
+            <td>NPR 170</td>
+            <td>NPR 200</td>
+            <td>N/A</td>
+            <td>Double ristretto base</td>
+          </tr>
+
+          <!-- COLD COFFEE CATEGORY -->
+          <tr>
+            <td class="category-cell" rowspan="4">🧊 Cold Coffee</td>
+            <td><strong>Cold Brew</strong></td>
+            <td>NPR 220</td>
+            <td>NPR 260</td>
+            <td>NPR 300</td>
+            <td>18-hour steep</td>
+          </tr>
+          <tr>
+            <td><strong>Iced Latte</strong></td>
+            <td>NPR 200</td>
+            <td>NPR 240</td>
+            <td>NPR 280</td>
+            <td>Over ice</td>
+          </tr>
+          <tr>
+            <td><strong>Frappuccino</strong></td>
+            <td>NPR 250</td>
+            <td>NPR 290</td>
+            <td>NPR 330</td>
+            <td>Blended with ice</td>
+          </tr>
+          <tr>
+            <td><strong>Caramel Macchiato</strong></td>
+            <td>N/A</td>
+            <td>NPR 280</td>
+            <td>NPR 310</td>
+            <td>Hot or iced</td>
+          </tr>
+
+          <!-- FOOD CATEGORY -->
+          <tr>
+            <td class="category-cell" rowspan="4">🥐 Food</td>
+            <td><strong>Butter Croissant</strong></td>
+            <td colspan="3" style="text-align:center;">NPR 180</td>
+            <td>Baked fresh daily</td>
+          </tr>
+          <tr>
+            <td><strong>Banana Walnut Muffin</strong></td>
+            <td colspan="3" style="text-align:center;">NPR 150</td>
+            <td>Vegan available</td>
+          </tr>
+          <tr>
+            <td><strong>Club Sandwich</strong></td>
+            <td colspan="3" style="text-align:center;">NPR 350</td>
+            <td>With fries</td>
+          </tr>
+          <tr>
+            <td><strong>Avocado Toast</strong></td>
+            <td colspan="3" style="text-align:center;">NPR 320</td>
+            <td>Sourdough bread</td>
+          </tr>
+
+          <!-- NESTED TABLE ROW for special combos -->
+          <tr>
+            <td class="category-cell" rowspan="2">🎁 Combos</td>
+            <td colspan="5">
+              <strong>Breakfast Combo:</strong>
+              <table style="margin-top:8px; font-size:0.88rem;">
+                <thead>
+                  <tr>
+                    <th>Combo</th>
+                    <th>Includes</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Morning Starter</td><td>Americano + Croissant</td><td>NPR 280</td></tr>
+                  <tr><td>Power Breakfast</td><td>Latte + Toast + Muffin</td><td>NPR 480</td></tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="5" style="color:var(--accent); font-weight:700; text-align:center;">
+              ★ Loyalty Card: Every 10th drink FREE — ask at the counter!
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo">Brew <span>&</span> Bean</span>
+        <p>Serving specialty coffee in the heart of Kathmandu since 2015. Come for the coffee, stay for the community.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="links.html">Links</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <ul>
+          <li>Thamel Marg, Thamel</li>
+          <li>Kathmandu, 44600</li>
+          <li>Nepal</li>
+          <li style="margin-top:10px;"><a href="mailto:hello@brewandbean.com">hello@brewandbean.com</a></li>
+          <li>+977-1-4700123</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <ul>
+          <li>Mon – Fri: 7am – 9pm</li>
+          <li>Saturday: 8am – 10pm</li>
+          <li>Sunday: 9am – 8pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Brew &amp; Bean Coffee, Thamel, Kathmandu, Nepal. All rights reserved.</p>
+      <nav class="footer-sec-nav" aria-label="Secondary navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
